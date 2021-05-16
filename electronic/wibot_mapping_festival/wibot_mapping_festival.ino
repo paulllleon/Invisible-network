@@ -70,7 +70,7 @@ void setup()
 {
   WiFi.setPins(8, 7, 4, 2);
   Serial.begin(115200);
-  while (!Serial) {
+  //  while (!Serial) {
   delay(100);
   //  }
   delay(100);
