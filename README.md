@@ -2,11 +2,11 @@
 
 usefull link
 
-Installer [Arduino](https://www.arduino.cc/en/software)
-[Arduino Documentation](https://www.arduino.cc/reference/en/)
-Installer les boards [M0 + Wifi](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/setup)
+- Installer [Arduino](https://www.arduino.cc/en/software)
+- [Arduino Documentation](https://www.arduino.cc/reference/en/)
+- Installer les boards [M0 + Wifi](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/setup)
 
-[Update SSL](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/updating-ssl-certificates)
+-[Update SSL](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/updating-ssl-certificates)
 
 Composants :
 
