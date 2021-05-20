@@ -1,13 +1,13 @@
-// the setup function runs once when you press reset or power the board
+// la fonction setup s'exécute une fois lorsque vous appuyez sur reset ou allumez la carte
 void setup() {
-  // initialize digital pin 13 as an output.
+  // initialiser la broche numero 13 comme une sortie.
   pinMode(13, OUTPUT);
 }
 
-// the loop function runs over and over again forever
+// la fonction loop se lance  à la fin se fonction setup et se répète à l'infini
 void loop() {
-  digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);              // wait for a second
-  digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);              // wait for a second
+  digitalWrite(13, HIGH);   // allume la LED (HIGH)
+  delay(1000);              // attend 1 seconde
+  digitalWrite(13, LOW);    // éteind la LED en mettant la tension basse(LOW)
+  delay(1000);              // attend 1 seconde
 }

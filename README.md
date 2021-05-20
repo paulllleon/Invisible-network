@@ -98,27 +98,85 @@ Il est maintenant temps de téléverser un premier code sur le Feather M0 !
 
 Ouvrez le fichier .ino de l'exemple [Blink](https://github.com/paulllleon/Invisible-network/blob/main/electronic/basic/blink/blink.ino)
 
-```
-// the setup function runs once when you press reset or power the board
+```C++
+// la fonction setup s'exécute une fois lorsque vous appuyez sur reset ou allumez la carte
 void setup() {
-  // initialize digital pin 13 as an output.
+  // initialiser la broche numero 13 comme une sortie.
   pinMode(13, OUTPUT);
 }
 
-// the loop function runs over and over again forever
+// la fonction loop se lance  à la fin se fonction setup et se répète à l'infini
 void loop() {
-  digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);              // wait for a second
-  digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);              // wait for a second
+  digitalWrite(13, HIGH);   // allume la LED (HIGH)
+  delay(1000);              // attend 1 seconde
+  digitalWrite(13, LOW);    // éteind la LED en mettant la tension basse(LOW)
+  delay(1000);              // attend 1 seconde
 }
 ```
 
+Ce code fait clignoter la LED rouge se trouvant juste à côté du porc USB.
+
+Pour téléverser le code au Feather M0 il suffis de sélectionner le bon type de carte et le port :
+
+- Outils > Type de carte: > Adafruit SAMD(32.bits... > Adafruit Feather M0
+- Outils > Port > ...(Adafruit Feather M0)
+- Appuyer sur le symbole → (flèche vert la droite) situé en haut à gauche de l'IDE Arduino
+
+![Uplaod](assets/images/upload.png)
+
+Si tout se passe bien
+
+- compilation du croquis
+- téléversement ...
+- téleversement terminé
+
+Si vous êtes passé par ces trois étapes, la LED rouge à côté du porc USB devrait clignoter.
+
+<!-- click the RST button twice (like a double-click)to get back into the bootloader.
+
+The red LED will pulse and/or RGB LED will be green, so you know that its in bootloader mode.
+
+Once it is in bootloader mode, you can select the newly created COM/Serial port and re-try uploading. -->
+
+---
+
+_**De manière général, si un code ne parvient pas être téléversé c'est qu'un de ces paramettre n'est pas correct.**_
+
+- Type de Carte
+- Port USB
+- le Feather M0 n'est pas en mode _**bootloader**_
+
+_**Vérifier ces trois paramettre et effectuer les actions suivasnts**_
+
+- Sélectionner le bon type de carte : `Outils > Type de carte: > Adafruit SAMD(32.bits... > Adafruit Feather M0`
+- double clicker sur le button reset de du Feather M0 pour le mettre en mode _**bottloader**_
+- Sélectionner le bon port USB : `Outils > Port > ...(Adafruit Feather M0)`
+- Appuyer sur le symbole → (flèche vert la droite) situé en haut à gauche de l'IDE Arduino
+
+---
+
 ---
 
 ---
 
 ---
+
+## Installation de bibliothèques
+
+Les bibliothèques sont des bouts codes réalisés par la communauté arduino ou des fabriquants de composants électroonque. Les bibliotèque permette notamment de communiquer plus facilement avec des compsoants et créant des fonction simple à utiliser.
+
+Dans notre cas, nous aurons besoin de biblothèques pour :
+
+- communiquer avec l'écran e-paper
+- récupé
+
+## Tester les composants
+
+Cette étape n'est pas obligatoire mais peu vous permettre de comprendre comment chaque composants fonctionne individuellement. Si vous souhaiter directement finalisé le module wibot en téléversant le code final, passez au chapitre suivant : **#Connexion à la base de donnée**
+
+##Connexion à la base de donnée
+
+##Finalisation de wibot
 
 - [Arduino Documentation](https://www.arduino.cc/reference/en/)
 - Installer les boards [M0 + Wifi](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/setup)
