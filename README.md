@@ -2,7 +2,11 @@ _**(for people who don't speak French, don't worry. It is an ongoing project, th
 
 # Invisible-network
 
-## Intro
+Invisible Network est projet réalisé par les designer **[Paul Lëon](https://www.instagram.com/paul_leon_noel/)** et **[Evan Kelly](https://www.instagram.com/evan_kly/)**, tout deux cofondateur du design lab _**[ZEROTERA](https://zerotera.ch/)**_. Cette page github est dédié à _Wibot_, un appareil portable qui rend la communication entre les machines perceptible et tangible. Ce dispositif agit comme un médiateur entre l'utilisateur et les machines qui l'entourent. À travers son écran, il indique les relations qu'il entretient avec son environnement personnel.
+
+---
+
+## Composants
 
 Dans ce projet nous utilisions les composants suivants :
 
@@ -11,7 +15,34 @@ Dans ce projet nous utilisions les composants suivants :
 - Un écran E-paper [2.9" Grayscale eInk](https://learn.adafruit.com/adafruit-eink-display-breakouts/grayscale-29-overview)
 - [Une batterie 3.7 1000mAh - connecteur JST 2.0](https://www.bastelgarage.ch/lipo-akku-1000mah-jst-1-25-lithium-ion-polymer-fur-lora-ttgo?search=lipo)
 
+---
+
 ## Assemblage
+
+1. brancher le Feather M0 à l'écran
+2. brancher le GPS au Feather M0 en passant par les pins de l'écran
+3. brancher la batterie au Feather M0
+
+1 - L'écran epaper est un _**wing**_ - _une aile en français_ -, elle a été conçu comme un _**shield**_ - _un bouclier en français_ - du jardon électronique qui veut que c'est un composant électronique conçu pour s'accrocher directement sur un autre dans notre cas le Feather M0. Vous pouvez donc directement brancher votre Feather M0 au dos de votre l'écran e-paper.
+
+2 - Brancher les câble dans le port de l'écran situées au même niveau que votre carte
+
+_(GPS - câble - Fether M0)_
+
+- 3.3V - long cable rouge - 3V
+- GND - long cable noir - GND
+- TX - câble jaune - RX
+- RX - petit câble rouge - TX
+
+**Les couleurs de câbles sur le schéma ne sont pas corrects, référez vous à la descritpion ci-dessus**
+
+![Gps wiring](assets/images/gps_wiring.png)
+
+_(image credits : All rights reserved by [lady ada](https://learn.adafruit.com/assets/99289#))_
+
+3 - La batterie est munie d'un connecteur JST 2.0 directemeent branchable au Feather M0
+
+Il n'y qu'un seul sens dans lequel le sens JST peut se brancher, pas de risque de se tromper.
 
 ---
 
@@ -163,12 +194,6 @@ _**Vérifier ces trois paramettre et effectuer les actions suivantes**_
 
 ---
 
----
-
----
-
----
-
 ## Installation de bibliothèques
 
 Les bibliothèques sont des bouts codes réalisés par la communauté arduino ou des fabriquants de composants électronique. Les bibliotèque permette notamment de communiquer plus facilement avec des compsoants et utilisant des fonction simple qui nous "prémache" le travail.
@@ -212,7 +237,7 @@ La plupart des exemples utilise avec la fonction de debug `Serial.print()` qui p
 
 ## Connexion à la base de donnée
 
-- Update firmware
+- Update firmware _([EN documentation here](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/updating-firmware))_
 - Update certificat SSL _([EN documentation here](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/updating-ssl-certificates))_
 
 - Changer les paramettre corespondant à votre réseau
@@ -232,7 +257,9 @@ La plupart des exemples utilise avec la fonction de debug `Serial.print()` qui p
 
 Si vous ne parvenez pas à vous connecter à votre réseau wifi, vérifier que le `WIFI_SSID` soit correctement orthographier. Dans le cas de présence de caractère spéciaux je vous conseil d'utiliser l'exemple [wifi_scan-network](https://github.com/paulllleon/Invisible-network/tree/main/electronic/test_component/wifi_scan-network) pour scanner les wifi alentour et copier le nom de votre wifi affiché dans le Moniteur série.
 
-Si
+Si tout fonctionne, le Moninteur série imprime _**le message test a été envoyé**_
+
+Si ce n'est pas le cas, le Moniteur série devraient afficher _**CONNECTION REFUSED**_, vérifier que le certificat SSL est bien installé.
 
 ---
 
@@ -240,7 +267,7 @@ Si
 
 Ouvrez le fichier [/electronic/wibot_mapping_festival](https://github.com/paulllleon/Invisible-network/tree/main/electronic/wibot_mapping_festival)
 
-- Changer les paramettre corespondant à votre réseau
+- Changer les paramettre corespondant à votre réseau `WIFI_SSID` et `WIFI_PASSWORD`
 - Changer le `USER_NAME` pour un nom qui vous sier (**éviter les espace et les caractère spéciaux**)
 
 ```C++
@@ -252,5 +279,9 @@ Ouvrez le fichier [/electronic/wibot_mapping_festival](https://github.com/paulll
   String USER_NAME = "paul"; //le pseudo que vous avez chois sans espace ni caractère spécial
 ```
 
-- [Arduino Documentation](https://www.arduino.cc/reference/en/)
-- Installer les boards [M0 + Wifi](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/setup)
+- Téléverser le code
+- Vérifier dans la Moniteur série qu'il n'y ai pas de _**CONNECTION REFUSED**_
+
+Si tout semble correctement fonctionner, vous pouvez débrancher le câble USB de votre Feather M0 et continuer à l'alimenter via la batterie 3.7v.
+
+_Votre *Wibot* est maintenant près à explorer les réseaux invisibles, bravo !_
