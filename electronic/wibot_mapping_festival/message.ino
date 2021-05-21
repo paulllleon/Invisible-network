@@ -81,7 +81,7 @@ String msgMetTime(int index) {
   if (Firebase.getInt(firebaseData, path + "/metTime"))
   {
     metTime = firebaseData.intData();
-    Serial.println(metTime);
+    //Serial.println(metTime);
   }
   else
   {
