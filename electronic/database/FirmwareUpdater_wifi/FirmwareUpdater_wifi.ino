@@ -38,7 +38,7 @@ static const int MAX_PAYLOAD_SIZE = 1024;
 #define CMD_HELLO             0x99
 
 void setup() {
-  WiFi.setPins(8, 7, 4, 2);
+  WiFi.setPins(8, 7, 4, 2);//spécification des branches utiliser pour carte wifi Feather M0
   Serial.begin(115200);
 
   nm_bsp_init();
