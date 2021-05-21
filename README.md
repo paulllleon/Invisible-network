@@ -214,14 +214,14 @@ De la même manière que les pacquets, tapez le nom de la bibliothèque dans la 
 Télécharger les biblothèques listé ci-dessous
 
 - Pour l'utilisation do module GPS
-  - Adafruit GPS Library
+  - _Adafruit GPS Library_
 - Pour utiliser le module Wifi integré au Feather M0
-  - WiFi101
+  - _WiFi101_
 - Pour communiquer avec la base de donnée Firebase
-  - Firebase Arduino based on WiFi101
+  - _Firebase Arduino based on WiFi101_
 - Pour utiliser l'écran e-paper
-  - Adafruit GFX Library
-  - Adafruit ImageReader Library
+  - _Adafruit GFX Library_
+  - _Adafruit ImageReader Library_
 
 **Ormi le téléchargement des bibliothèques**, l'étape de tester chacun des composants n'est pas obligatoire mais peu vous permettre de comprendre comment chaque composants fonctionne individuellement.
 
