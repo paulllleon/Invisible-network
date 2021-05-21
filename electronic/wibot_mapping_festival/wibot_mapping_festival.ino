@@ -13,7 +13,7 @@ String gPosition = "";
 //
 
 
-//Wifi
+//Wifi à remplacer par vos infos
 String wifiName = "Paul’s iPhone";
 #define WIFI_SSID "Paul’s iPhone"
 #define WIFI_PASSWORD "noproblemno"
@@ -40,7 +40,7 @@ String wifiAround[] = {
 
 //Firebase
 #include "Firebase_Arduino_WiFi101.h"
-String USER_NAME = "paul";
+String USER_NAME = "pseudo"; //REMPLACEZ PAS UN AUTRE NOM
 #define FIREBASE_HOST "invisible-network-default-rtdb.europe-west1.firebasedatabase.app"
 #define FIREBASE_AUTH "yfRnqbVBhJ4OpcjxCmfJp9N6rAR8C2mq3M2YjPzN"
 FirebaseData firebaseData;
