@@ -169,13 +169,9 @@ Si ce n'est pas le cas essayer de mettre votre Feather M0 en _**bootloader**_ ma
 
 _image origignal by [lady ada](https://learn.adafruit.com/users/adafruit) published under this [LICENSE](http://creativecommons.org/licenses/by-sa/3.0/)_
 
-Si le double click functionne la LED située à côté du port USB du Feather M0 devrait pulsé
+Si le Feather est dans le mode attendu, la LED rouge située à côté du port USB du Feather M0 devrait pulser. SI la LED ne pulse pas, double clickez à nouveau
 
-<!-- click the RST button twice (like a double-click)to get back into the bootloader.
-
-The red LED will pulse and/or RGB LED will be green, so you know that its in bootloader mode.
-
-Once it is in bootloader mode, you can select the newly created COM/Serial port and re-try uploading. -->
+Vous pouvez maintenant sélectionner le nouveau : `Outils > Port > ...(Adafruit Feather M0)` puis téléverser le code.
 
 ---
 
@@ -204,6 +200,14 @@ Dans notre cas, nous aurons besoin de biblothèques pour :
 - récupérer l'heure et la position géographique
 - scanner les réseaux wifi
 - communiquer avec la database
+
+Pour télécharger une bibliothèque rendu vous dans le gestionnaire de bibliothèque
+
+`Outils > Gérer les bibliothèques`
+
+De la même manière que les pacquets, tapez le nom de la bibliothèque dans la bar de rechercher et cliquez sur le bouton _Installer_
+
+---
 
 ## Tester les composants
 
@@ -237,19 +241,41 @@ La plupart des exemples utilise avec la fonction de debug `Serial.print()` qui p
 
 ## Connexion à la base de donnée
 
-- Update firmware _([EN documentation here](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/updating-firmware))_
-- Update certificat SSL _([EN documentation here](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/updating-ssl-certificates))_
+- Ouvrez le code [FirmwareUpdater_wifi](https://github.com/paulllleon/Invisible-network/tree/main/electronic/database/FirmwareUpdater_wifi)
+- Télévesez le code
 
-- Changer les paramettre corespondant à votre réseau
-- Changer le `USER_NAME` pour un nom qui vous sier (**éviter les espace et les caractère spéciaux**)
+- Update firmware _([EN documentation + images](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/updating-firmware))_
+
+`Outils > WiFi101 / WiFiNINA Firmware Updater`
+
+- Sélectionner le port contenant `Adafruit Feather M0`
+- clicker le bouton **Test connection**
+- (si aucun message d'erreur n'est apparu) - sous **Update firmware** choisissez le premire élément contenant `WINC1501 Model B ...` puis clikcez sur le bouton **Update Firmware**
+
+Dernière étape, la plus importante dans ce process, toujours dans la fenêtre **WiFi101 / WiFiNINA Firmware/Certficates Updater**
+
+- Update certificat SSL _([EN documentation + image](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/updating-ssl-certificates))_
+- Dans la section **3. Update SSL root certificates** clickez add domain
+- copiez cette URL :
+  `invisible-network-default-rtdb.europe-west1.firebasedatabase.app`
+- clickez sur le bouton **Upload Certificates**
+
+---
+
+Maintenant le certificat installé, vous devriez pouvoir vous connecter à la base de données.
+
+- Ouvrer le fichier de l'exemple [connexion_to_Database](https://github.com/paulllleon/Invisible-network/blob/main/electronic/database/connexion_to_Database/connexion_to_Database.ino)
+- Changer les paramètres correspondant à votre réseau
 
 ```C++
   #define WIFI_SSID "Paul’s iPhone" // le nom de votre réseau wifi
   #define WIFI_PASSWORD "noproblemno" // le mot de passse de votre réseau
-  ...
-  ...
-  ...
-  String USER_NAME = "paul"; //le pseudo que vous avez chois sans espace ni caractère spécial
+```
+
+- Changer le `USER_NAME` pour un nom qui vous sier (**éviter les espace et les caractère spéciaux**)
+
+```C++
+  String USER_NAME = "test"; //le pseudo que vous avez chois sans espace ni caractère spécial
 ```
 
 - Téléverser le code
