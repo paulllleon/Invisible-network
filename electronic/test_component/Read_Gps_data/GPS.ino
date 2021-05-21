@@ -56,11 +56,11 @@ void readGps() {
       //      Serial.print("Altitude: "); Serial.println(GPS.altitude);
       //      Serial.print("Satellites: "); Serial.println((int)GPS.satellites);
       String msg =  String(GPS.latitude, 4) + String(GPS.lat) + ", "  + String(GPS.longitude, 4) + String(GPS.lon);
-      return msg;
+      //return msg;
     }
     else {
       String msg = "no gps";
-      return msg;
+      //return msg;
     }
   }
 }
