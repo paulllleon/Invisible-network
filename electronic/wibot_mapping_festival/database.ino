@@ -48,8 +48,9 @@ void sendData(String bssid, String wifiName, int rssi, int wifiChannel) {
 
   String allInOne = gTime + "-" + gDay + "-" + gPosition;
   //Serial.println(allInOne);
+  String snapPath = "/" + USER_NAME + "/snapshots/"
   // à chaque fois que l'on vois un wifi déjà croisé, on enregistre l'heure, la date, et la position de la rencontre
-if (Firebase.pushString(firebaseData, "/snapshots/" + bssid, allInOne)) {}
+if (Firebase.pushString(firebaseData, snapPath + bssid, allInOne)) {}
   else {
     Serial.print("Error in set snapshot, ");
     Serial.println(firebaseData.errorReason());
