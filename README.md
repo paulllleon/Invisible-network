@@ -1,4 +1,4 @@
-_(for no french, don't worry. This is a ongoing project, the english page will arrive soon, around end of june 2021)_
+_**(for people who don't speak French, don't worry. It is an ongoing project, the English page will arrive soon, towards the end of June 2021)**_
 
 # Invisible-network
 
@@ -25,7 +25,7 @@ _(si vous êtes sous MacOS la fenêtre sera légerement différente, le menu se 
 ![Arduino IDE](assets/images/arduino_ide.png)
 
 Avant de pouvoir vraiment commencer il nous faut encore installer les _Boards Manager_ qui nous permettra de communiquer à le model spécifique de notre micro controleur.
-Cela se fait en 2 étapes : (_[english doc here](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/setup)_)
+Cela se fait en 2 étapes : (_[EN documentation here](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/setup)_)
 
 ### 1 - Ajouter les _Boards Mananger_ nécessaire pour utiliser le micro controller M0
 
@@ -132,6 +132,14 @@ Si tout se passe bien
 
 Si vous êtes passé par ces trois étapes, la LED rouge à côté du porc USB devrait clignoter.
 
+Si ce n'est pas le cas essayer de mettre votre Feather M0 en _**bootloader**_ manuel. Pour cela, cliquez 2 fois (double clickez) sur le button _RESET_ de votre Feather M0. Le bouton _RESET_ est le petit button noir qui se trouve juste à côté du port USB du Feather M0.
+
+![reset](assets/images/reset_btn.jpg)
+
+_image origignal by [lady ada](https://learn.adafruit.com/users/adafruit) published under this [LICENSE](http://creativecommons.org/licenses/by-sa/3.0/)_
+
+Si le double click functionne la LED située à côté du port USB du Feather M0 devrait pulsé
+
 <!-- click the RST button twice (like a double-click)to get back into the bootloader.
 
 The red LED will pulse and/or RGB LED will be green, so you know that its in bootloader mode.
@@ -146,7 +154,7 @@ _**De manière général, si un code ne parvient pas être téléversé c'est qu
 - Port USB
 - le Feather M0 n'est pas en mode _**bootloader**_
 
-_**Vérifier ces trois paramettre et effectuer les actions suivasnts**_
+_**Vérifier ces trois paramettre et effectuer les actions suivantes**_
 
 - Sélectionner le bon type de carte : `Outils > Type de carte: > Adafruit SAMD(32.bits... > Adafruit Feather M0`
 - double clicker sur le button reset de du Feather M0 pour le mettre en mode _**bottloader**_
@@ -163,22 +171,89 @@ _**Vérifier ces trois paramettre et effectuer les actions suivasnts**_
 
 ## Installation de bibliothèques
 
-Les bibliothèques sont des bouts codes réalisés par la communauté arduino ou des fabriquants de composants électroonque. Les bibliotèque permette notamment de communiquer plus facilement avec des compsoants et créant des fonction simple à utiliser.
+Les bibliothèques sont des bouts codes réalisés par la communauté arduino ou des fabriquants de composants électronique. Les bibliotèque permette notamment de communiquer plus facilement avec des compsoants et utilisant des fonction simple qui nous "prémache" le travail.
 
 Dans notre cas, nous aurons besoin de biblothèques pour :
 
-- communiquer avec l'écran e-paper
-- récupé
+- afficher du contenu sur l'écran e-paper
+- récupérer l'heure et la position géographique
+- scanner les réseaux wifi
+- communiquer avec la database
 
 ## Tester les composants
 
-Cette étape n'est pas obligatoire mais peu vous permettre de comprendre comment chaque composants fonctionne individuellement. Si vous souhaiter directement finalisé le module wibot en téléversant le code final, passez au chapitre suivant : **#Connexion à la base de donnée**
+Télécharger les biblothèques listé ci-dessous
 
-##Connexion à la base de donnée
+- Pour l'utilisation do module GPS
+  - Adafruit GPS Library
+- Pour utiliser le module Wifi integré au Feather M0
+  - WiFi101
+- Pour communiquer avec la base de donnée Firebase
+  - Firebase Arduino based on WiFi101
+- Pour utiliser l'écran e-paper
+  - Adafruit GFX Library
+  - Adafruit ImageReader Library
 
-##Finalisation de wibot
+**Ormi le téléchargement des bibliothèques**, l'étape de tester chacun des composants n'est pas obligatoire mais peu vous permettre de comprendre comment chaque composants fonctionne individuellement.
+
+Si vous souhaiter finalisé le module _**Wibot**_ au plus vite e, passez au chapitre suivant : **#Connexion à la base de donnée**
+
+Pour tester chacun des composants utiliser les exemples dans le dossier [electronic/test_component](https://github.com/paulllleon/Invisible-network/tree/main/electronic/test_component)
+
+Pour téléverser les différents exemples à votre Feather M0, référez vous à la fin du chapitre **#Premier pats**.
+
+La plupart des exemples utilise avec la fonction de debug `Serial.print()` qui permet d'afficher des informations dans le **Moniteur série**. Pour y accéder, une fois le téléversement terminé, cliqué sur le symbole de ⚲ loupe situé en haut à droite de l'IDE arduino.
+
+![moniteur_serie_bouton](assets/images/moniteur_serie.png)
+
+**Si l'un des exemple ne fonctionne pas, assurer vous d'avoir bien installé toutes les bibliothèques requises et reessayer de téléverser le code.**
+
+---
+
+## Connexion à la base de donnée
+
+- Update firmware
+- Update certificat SSL _([EN documentation here](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/updating-ssl-certificates))_
+
+- Changer les paramettre corespondant à votre réseau
+- Changer le `USER_NAME` pour un nom qui vous sier (**éviter les espace et les caractère spéciaux**)
+
+```C++
+  #define WIFI_SSID "Paul’s iPhone" // le nom de votre réseau wifi
+  #define WIFI_PASSWORD "noproblemno" // le mot de passse de votre réseau
+  ...
+  ...
+  ...
+  String USER_NAME = "paul"; //le pseudo que vous avez chois sans espace ni caractère spécial
+```
+
+- Téléverser le code
+- Ouvrez le Moniteur Série
+
+Si vous ne parvenez pas à vous connecter à votre réseau wifi, vérifier que le `WIFI_SSID` soit correctement orthographier. Dans le cas de présence de caractère spéciaux je vous conseil d'utiliser l'exemple [wifi_scan-network](https://github.com/paulllleon/Invisible-network/tree/main/electronic/test_component/wifi_scan-network) pour scanner les wifi alentour et copier le nom de votre wifi affiché dans le Moniteur série. 
+
+Si 
+
+
+---
+
+## Finalisation de wibot
+
+Ouvrez le fichier [/electronic/wibot_mapping_festival](https://github.com/paulllleon/Invisible-network/tree/main/electronic/wibot_mapping_festival)
+
+- Changer les paramettre corespondant à votre réseau
+- Changer le `USER_NAME` pour un nom qui vous sier (**éviter les espace et les caractère spéciaux**)
+
+```C++
+  #define WIFI_SSID "Paul’s iPhone" // le nom de votre réseau wifi
+  #define WIFI_PASSWORD "noproblemno" // le mot de passse de votre réseau
+  ...
+  ...
+  ...
+  String USER_NAME = "paul"; //le pseudo que vous avez chois sans espace ni caractère spécial
+```
+
+
 
 - [Arduino Documentation](https://www.arduino.cc/reference/en/)
 - Installer les boards [M0 + Wifi](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/setup)
-
--[Update SSL](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/updating-ssl-certificates)
