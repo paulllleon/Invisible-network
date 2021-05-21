@@ -230,10 +230,9 @@ La plupart des exemples utilise avec la fonction de debug `Serial.print()` qui p
 - Téléverser le code
 - Ouvrez le Moniteur Série
 
-Si vous ne parvenez pas à vous connecter à votre réseau wifi, vérifier que le `WIFI_SSID` soit correctement orthographier. Dans le cas de présence de caractère spéciaux je vous conseil d'utiliser l'exemple [wifi_scan-network](https://github.com/paulllleon/Invisible-network/tree/main/electronic/test_component/wifi_scan-network) pour scanner les wifi alentour et copier le nom de votre wifi affiché dans le Moniteur série. 
+Si vous ne parvenez pas à vous connecter à votre réseau wifi, vérifier que le `WIFI_SSID` soit correctement orthographier. Dans le cas de présence de caractère spéciaux je vous conseil d'utiliser l'exemple [wifi_scan-network](https://github.com/paulllleon/Invisible-network/tree/main/electronic/test_component/wifi_scan-network) pour scanner les wifi alentour et copier le nom de votre wifi affiché dans le Moniteur série.
 
-Si 
-
+Si
 
 ---
 
@@ -252,8 +251,6 @@ Ouvrez le fichier [/electronic/wibot_mapping_festival](https://github.com/paulll
   ...
   String USER_NAME = "paul"; //le pseudo que vous avez chois sans espace ni caractère spécial
 ```
-
-
 
 - [Arduino Documentation](https://www.arduino.cc/reference/en/)
 - Installer les boards [M0 + Wifi](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/setup)
