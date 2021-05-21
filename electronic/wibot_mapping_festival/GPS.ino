@@ -30,9 +30,9 @@ void readGps() {
      Serial.println(gTime);
      Serial.println(gDay);
      Serial.println(gPosition);
-     Serial.println(GPS.minute);
-     Serial.println(GPS.seconds);
-     Serial.println(GPS.milliseconds);
+//     Serial.println(GPS.minute);
+//     Serial.println(GPS.seconds);
+//     Serial.println(GPS.milliseconds);
      
     
     // ne pas lancer la recherche de wifi si le GPS n'est pas encore régler (0,0,0 valeur pas default)

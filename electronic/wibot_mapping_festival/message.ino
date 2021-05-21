@@ -57,8 +57,8 @@ String msgNewFriends() {
 String msgMetTime(int index) {
   String bssid = wifiAround[index];
   String path = "/" + USER_NAME + "/wifi/" + bssid;
-  Serial.print("random name: ");
-  Serial.println(bssid);
+//  Serial.print("random name: ");
+//  Serial.println(bssid);
   String wifiName = "";
   int metTime;
   //     if (Firebase.getInt(firebaseData, path + "/Int/Data" + (i + 1)))
