@@ -2,6 +2,8 @@ let selection = "gps";
 let wifiList = [];
 let currentWifi;
 
+let ready = false;
+
 function readDB() {
   database.ref(`${USER}`).once("value", function (snapshot) {
     if (snapshot.val()) {
@@ -51,13 +53,38 @@ function readDB() {
             datas.ltt = gpstoGMapCord(data.position.lattitude);
             datas.lgt = gpstoGMapCord(data.position.longitude);
             datas.time = data.time;
-
+            // console.log(datas);
             wifiList.push(new Wifi(macAdress, datas));
             good = true;
           }
         });
       }
     }
+
+    const eastherEgg = {
+      macadress: "SA:LU:T-:--:EC:AL",
+      datas: {
+        channel: 11,
+        lattitude: "4632.7500N",
+        lgt: 6.588326,
+        longitude: "634.3202E",
+        ltt: 46.5366194,
+        macadress: "A0:B1:C2:D3:E4:F5",
+        met: 152,
+        rssi: -54,
+        time: {
+          day: "23",
+          hour: "0",
+          minute: "0",
+          month: "5",
+          second: "0",
+          year: "21",
+        },
+        wifiName: "Happy_Birthday_Pauline",
+      },
+    };
+
+    wifiList.push(new Wifi(eastherEgg.macadress, eastherEgg.datas));
 
     // trier la liste des wifis dans un orde alphabetic
     wifiList.sort((a, b) => {
@@ -92,6 +119,10 @@ function creatOptionList() {
     udpateCaption();
     logInfo();
   };
+
+  ready = true;
+  currentWifi = wifiList[Math.floor(Math.random() * wifiList.length)];
+  udpateCaption();
 }
 
 function udpateCaption() {
@@ -114,8 +145,14 @@ function logInfo() {
     "lattitude",
     "longitude",
   ];
+  const bloc = document.getElementById("wifiDatas");
+  bloc.innerHTML = "";
   infoToLog.forEach((key) => {
-    console.log(`${key} : ${currentWifi[key]}`);
+    const text = `${key} : ${currentWifi[key]}`;
+    console.log(text);
+    const p = document.createElement("p");
+    p.innerHTML = text;
+    bloc.appendChild(p);
   });
 
   console.log("-----");
@@ -200,7 +237,7 @@ class Wifi {
     this.lattitude = info.lattitude;
     this.longitude = info.longitude;
     this.adress = info.adress;
-    this.metTime = info.met;
+    this.metTime = info.met + 1;
     const time = info.time;
     this.time = time;
     this.date = new Date(
