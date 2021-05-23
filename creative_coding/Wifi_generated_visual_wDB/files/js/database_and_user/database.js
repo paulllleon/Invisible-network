@@ -96,7 +96,7 @@ function readDB() {
     });
 
     currentWifi = wifiList[0];
-    console.log(wifiList);
+    // console.log(wifiList);
     creatOptionList();
   });
 }
@@ -115,7 +115,7 @@ function creatOptionList() {
   select.onchange = () => {
     currentWifi = wifiList[select.value];
     udpateCaption();
-      logInfo();
+    logInfo();
     reDraw();
   };
 
