@@ -18,8 +18,6 @@ function readDB() {
       //   console.log(wifi);
 
       for (let macAdress in snap) {
-        if (macAdress == "74:0A:E1:52:C8:E7") {
-        }
         // PAS PLUS DE 360 ???!!
         //console.log(macAdress);
         noGps = 0;
@@ -69,7 +67,7 @@ function readDB() {
         lgt: 6.588326,
         longitude: "634.3202E",
         ltt: 46.5366194,
-        macadress: "A0:B1:C2:D3:E4:F5",
+        macadress: "1C:B1:C2:D3:9C:4E",
         met: 152,
         rssi: -54,
         time: {
@@ -117,7 +115,8 @@ function creatOptionList() {
   select.onchange = () => {
     currentWifi = wifiList[select.value];
     udpateCaption();
-    logInfo();
+      logInfo();
+    reDraw();
   };
 
   ready = true;
@@ -149,7 +148,7 @@ function logInfo() {
   bloc.innerHTML = "";
   infoToLog.forEach((key) => {
     const text = `${key} : ${currentWifi[key]}`;
-    console.log(text);
+    // console.log(text);
     const p = document.createElement("p");
     p.innerHTML = text;
     bloc.appendChild(p);
