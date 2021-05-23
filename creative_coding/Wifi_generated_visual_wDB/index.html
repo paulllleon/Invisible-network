@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<head>
+    <title>Invisible Network Generated Visual</title>
+    <!--Lien vers les fichiers  de style .CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="files/css/user.css">
+    <!--Lien vers la librairie P5 -->
+    <script src="files/js/p5/p5.js"></script>
+
+    <!--Lien vers les libraries nécessaire pour communiquer à la database -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+
+</head>
+
+<div id="userbox">
+    <p>Who are you ?</p>
+<div id="userSelection">
+    <div id="userSelectionContainer">
+        <select name="participants" id="participants">
+            <option value="null">-nothing-</option>
+          </select>
+    </div>
+</div>
+</div>
+
+<a class="active"  id="userName">USERXXX</a>
+<select id=wifiList></select>
+
+
+
+<div id="container">
+    <div class="upperPart">
+        <!-- Here's the canvas -->
+    </div>
+    <div class="bottomPart">
+        <div class="bottompartContainer">
+        <h1 id="wifiName">Swisscom4GHZ</h1>
+        <h2 id = "macAdress">74-2F-68-E9-A1-53</h2>
+
+            <div class="bottomPartInfos">
+                <ul>
+                    <li>Time met<br><div id="timemet">21</div></li>
+                    <li>Signal<br><div id="signal">-84</div></li>
+                    <li>location<br><div id="location">41.40338, 2.17403</div></li>
+                </ul>
+            </div>
+
+    </div>
+    </div>
+
+</div>
+
+<!-- importation de library googlemaps, celle-ci va nous permettre de récupérer une adresse à partir de coordonné gps -->
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBooAOY3p0lOhqUiBqzjMF6tJWefQOszk&callback=initMap">
+</script>
+
+
+ <!--Lien vers les fichier javasccipt USER + Datbase -->
+ <script src="files/js/database_and_user/config.js"></script>
+ <script src="files/js/database_and_user/database.js"></script>
+ <script src="files/js/database_and_user/user.js"></script>
+
+<!--Lien vers le fichier javasccipt -->
+<script src="sketch.js"></script>
+
+</body>
+</html>

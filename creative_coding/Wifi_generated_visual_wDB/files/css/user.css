@@ -1,0 +1,47 @@
+#userbox {
+  position: fixed;
+  z-index: 300;
+  width: 20%;
+  /* height:300px; */
+  margin-left: 40%;
+  margin-right: 40%;
+  background-color: white;
+  text-align: center;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: none;
+}
+#userbox p {
+  font-family: Simplon;
+  text-transform: uppercase;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+#userSelection {
+  position: relative;
+  width: auto;
+  font-family: Autoscape;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+#participants {
+  font-family: Autoscape;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 5px;
+}
+
+/* ---------  */
+
+#userName {
+  padding: 10px;
+  font-family: Simplon;
+  color: white;
+  background-color: black;
+}
+

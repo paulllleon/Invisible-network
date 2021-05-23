@@ -1,0 +1,107 @@
+@font-face {
+  font-family: Simplon;
+  src: url(files/fonts/SimplonEcalNorm-Bold.otf);
+}
+
+@font-face {
+  font-family: SimplonRegular;
+  src: url(files/fonts/SimplonEcalNorm-Regular.otf);
+}
+
+@font-face {
+  font-family: Autoscape;
+  src: url(files/fonts/autoscape.ttf);
+}
+
+#body {
+  background-color: rgb(158, 158, 158);
+}
+
+#defaultCanvas0 {
+  position: absolute;
+  top: 8%;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+#container {
+  position: absolute;
+  width: 600px;
+  height: 750px;
+  background-color: white;
+  top: 8%;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  border-radius: 10px;
+
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.upperPart {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+}
+
+.bottomPart {
+  position: relative;
+  width: 100%;
+}
+
+.bottompartContainer {
+  position: relative;
+  width: 95%;
+  margin: auto;
+  margin-top: 15px;
+  user-select: none;
+}
+
+h1 {
+  font-family: Simplon;
+  font-size: 35px;
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  font-family: Autoscape;
+  font-size: 12px;
+  padding: 0;
+  margin-top: 5px;
+}
+
+ul {
+  list-style-type: none;
+  position: relative;
+  padding-left: 0;
+}
+
+li {
+  position: relative;
+  width: 28%;
+  display: inline-block;
+  vertical-align: top;
+  font-family: SimplonRegular;
+  font-size: 12px;
+}
+
+#timemet,
+#location,
+#signal {
+  font-family: Simplon;
+  font-size: 20px;
+}
+
+.bottomPartInfos ul :nth-child(3) {
+  width: 40% !important;
+}
+
+li div {
+  width: 100% !important;
+}
