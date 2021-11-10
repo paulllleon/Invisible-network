@@ -1,8 +1,10 @@
-_**(for people who don't speak French, don't worry. It is an ongoing project, the English page will arrive soon, towards the end of June 2021)**_
+ _(This project page was originally intended for a workshop given at the Mapping Festival 2021 in Geneva, Switzerland. That's why the page is in French.)_
+_**If you don't speak French but are curious to know more about the project, don't hesitate to write me.**_
+_**It is an ongoing project, I will translate the page into English as soon as I have time.**_ 
 
 # Invisible-network
 
-Invisible Network est projet réalisé par les designer **[Paul Lëon](https://www.instagram.com/paul_leon_noel/)** et **[Evan Kelly](https://www.instagram.com/evan_kly/)**, tout deux cofondateur du design lab _**[ZEROTERA](https://zerotera.ch/)**_. Cette page github est dédié à _Wibot_, un appareil portable qui rend la communication entre les machines perceptible et tangible. Ce dispositif agit comme un médiateur entre l'utilisateur et les machines qui l'entourent. À travers son écran, il indique les relations qu'il entretient avec son environnement personnel.
+Invisible Network est projet réalisé par les designer **[Paul Lëon](https://www.instagram.com/paul_leon_noel/)** et **[Evan Kelly](https://www.instagram.com/evan_kly/)**, tout deux cofondateur du design lab _**[ZEROTERA](https://www.instagram.com/zerotera_0t/)**_. Cette page github est dédié à _Wibot_, un appareil portable qui rend la communication entre les machines perceptible et tangible. Ce dispositif agit comme un médiateur entre l'utilisateur et les machines qui l'entourent. À travers son écran, il indique les relations qu'il entretient avec son environnement personnel.
 
 ---
 
